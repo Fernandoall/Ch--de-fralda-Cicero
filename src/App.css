@@ -1,54 +1,96 @@
 /* src/App.css */
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Quicksand', sans-serif;
-    background-color: #f0f8ff;
-  }
-  
-  .App {
-    padding: 2rem;
-    text-align: center;
-  }
-  
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #f4f1e1; /* fundo bege claro */
+  color: #3a3a3a; /* texto escuro para contraste */
+}
+
+.App {
+  padding: 2rem;
+  text-align: center;
+}
+
+.vitrine {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.card {
+  background: #fff8e1; /* fundo bege mais suave */
+  border-radius: 8px;
+  padding: 1rem;
+  width: 220px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.card h3 {
+  margin: 0.5rem 0;
+  color: #4e4b3e; /* cor do título mais escura */
+  font-family: 'Playfair Display', serif; /* fonte serifada para um toque mais elegante */
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #6b5d2d; /* cor de texto mais amarelada para dar o tom de natureza */
+}
+
+button {
+  background-color: #f0c674; /* amarelo queimado */
+  border: none;
+  padding: 0.6rem 1.2rem;
+  margin-top: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #fff;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #d49e34; /* tom mais escuro ao passar o mouse */
+}
+
+button:active {
+  transform: scale(0.98); /* efeito de clique */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
   .vitrine {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center;
-    margin-top: 2rem;
+    gap: 1rem;
   }
-  
+
   .card {
-    background: white;
-    border-radius: 8px;
-    padding: 1rem;
-    width: 200px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 180px;
   }
-  
-  .card img {
-    width: 100%;
-    height: auto;
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 150px;
   }
-  
-  .card h3 {
-    margin: 0.5rem 0;
-  }
-  
-  .card p {
-    font-size: 0.9rem;
-    color: #555;
-  }
-  
+
   button {
-    background-color: #ffd600;
-    border: none;
-    padding: 0.5rem 1rem;
-    margin-top: 0.5rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
   }
-  
+}

@@ -4,14 +4,14 @@ import React, { useState, useRef } from "react";
 import products from "../data/products";
 import FloatingCartButton from "./FloatingCartButton";
 import CartModal from "./CartModal";
-import ClientInfoModal from "./ClientInfoModal"; // <-- Novo import
+import ClientInfoModal from "./ClientInfoModal";
 import "../style/vitrine.scss";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const ProductList = () => {
   const [selectedItems, setSelectedItems] = useState({});
   const [cartOpen, setCartOpen] = useState(false);
-  const [showClientModal, setShowClientModal] = useState(false); // <-- Novo estado
+  const [showClientModal, setShowClientModal] = useState(false);
   const carrosselRefs = useRef({});
 
   const categorias = [...new Set(products.map((p) => p.categoria))];
@@ -107,13 +107,11 @@ const ProductList = () => {
         ))}
       </div>
 
-      {/* Botão da sacola */}
       <FloatingCartButton
         selectedItems={selectedItems}
         onClick={() => setCartOpen(true)}
       />
 
-      {/* Modal da sacola */}
       {cartOpen && (
         <CartModal
           selectedItems={selectedItems}
@@ -121,17 +119,21 @@ const ProductList = () => {
           onClose={() => setCartOpen(false)}
           onFinish={() => {
             setCartOpen(false);
-            setShowClientModal(true); // <-- Abre o modal de cliente
+            setShowClientModal(true);
           }}
         />
       )}
 
-      {/* Modal de informações do cliente */}
       {showClientModal && (
         <ClientInfoModal
           selectedItems={Object.entries(selectedItems).map(([id, qtd]) => {
             const product = products.find((p) => p.id === Number(id));
-            return { id, nome: product?.nome || `Produto ID ${id}`, qtd };
+            return {
+              id,
+              nome: product?.nome || `Produto ID ${id}`,
+              qtd,
+              imagem: product?.imagem || "#",
+            };
           })}
           onClose={() => setShowClientModal(false)}
         />

@@ -4,42 +4,61 @@ import React, { useState } from "react";
 import Agradecimento from './Agradecimento';
 import "./ClientInfoModal.scss";
 
-const ClientInfoModal = ({ onClose, selectedItems }) => {
+const ClientInfoModal = ({ onClose = () => {}, selectedItems }) => {
   const [nome, setNome] = useState("");
   const [telefone, setTelefone] = useState("");
   const [formaEntrega, setFormaEntrega] = useState("");
   const [showAgradecimento, setShowAgradecimento] = useState(false);
 
-  const handleSubmit = () => {
+  const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+  const handleSubmit = async () => {
     if (!nome || !telefone || !formaEntrega) {
       alert("Por favor, preencha todos os campos.");
       return;
     }
 
-    let mensagem = `Oi, Laura! Aqui é ${nome}, meu telefone é ${telefone}. `;
-    mensagem += `Assinei os seguintes itens da lista do Chá de Fraldas do Antônio Cícero:\n`;
+    setShowAgradecimento(true); // 1. Exibe mensagem de agradecimento
+
+    await delay(4000);
+    
+    if (typeof onClose === "function") {
+        onClose();
+    };
+    
+    await delay(1000);// 2. Espera 4 segundos
+
+    // 3. Gera mensagem do WhatsApp
+    let mensagem = `Oi, Laura! Aqui é ${nome}, meu telefone é ${telefone}.\n`;
+    mensagem += "Assinei os seguintes itens da lista do Chá de Fraldas do Antônio Cícero:\n";
     mensagem += selectedItems.map((item) => `- ${item.qtd}x ${item.nome}`).join("\n");
 
     mensagem += `\n\nFarei o envio dos itens via: ${formaEntrega}.\n`;
 
-    mensagem += `\nInformações úteis:\n\n`;
+    mensagem += "\nInformações úteis:\n\n";
 
-    mensagem += `Caso tenha optado por PIX:\nChave Pix: 017.572.834-80\n`;
+    mensagem += "Caso tenha optado por PIX:\nChave Pix: 017.572.834-80\n";
 
-    mensagem += `\nCaso tenha optado por Presencial no dia do Chá.\nInformações do evento:\nData: 17 de maio, às 15h.\nLocal: Boteco Seu Tijuca.\nEndereço: Av. Washington Luís, 386 - Gonzaga, Santos - SP\n\n`;
+    mensagem += "\nCaso tenha optado por Presencial no dia do Chá.\nInformações do evento:\n";
+    mensagem += "Data: 17 de maio, às 15h.\nLocal: Boteco Seu Tijuca.\n";
+    mensagem += "Endereço: Av. Washington Luís, 386 - Gonzaga, Santos - SP\n\n";
 
-    mensagem += `Caso tenha optado por Envio no nosso endereço:\nEndereço para entrega: Av. Martins Fontes, 506, Apto 12 - Catiapoã, São Vicente - SP - CEP: 11390-200\n`;
+    mensagem += "Caso tenha optado por Envio no nosso endereço:\n";
+    mensagem += "Endereço para entrega: Av. Martins Fontes, 506, Apto 12 - Catiapoã, São Vicente - SP - CEP: 11390-200\n";
 
     mensagem += `\nCom carinho,\n${nome}`;
 
     const whatsappLink = `https://wa.me/5584998140986?text=${encodeURIComponent(mensagem)}`;
-    window.open(whatsappLink, "_blank");
+    window.open(whatsappLink, "_blank"); // 4. Abre WhatsApp
 
-    setShowAgradecimento(true);
+    await delay(1000); // Espera 1s para garantir abertura
 
-    setTimeout(() => {
-      onClose(); // Fecha o modal após 2 segundos
-    }, 2000);
+    // 5. Fecha o modal
+    if (typeof onClose === "function") {
+      onClose();
+    } else {
+      console.warn("onClose não é uma função!");
+    }
   };
 
   return (
@@ -86,7 +105,9 @@ const ClientInfoModal = ({ onClose, selectedItems }) => {
                 </div>
               ))}
             </div>
-            <button className="enviar-btn" onClick={handleSubmit}>Assinar e enviar no whatsapp</button>
+            <button className="enviar-btn" onClick={handleSubmit}>
+              Assinar e enviar no whatsapp
+            </button>
           </>
         )}
       </div>

@@ -1,35 +1,59 @@
 .header {
-    background-color: #ffffff;
-    padding: 1.5rem 1rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 2rem;
+  background-color: #EFEAD8;
+  padding: 2rem 1.5rem;
+  border-radius: 18px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  text-align: center;
+  border: 1px solid #D6C9A3;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.header h1 {
+  font-size: 2.2rem;
+  color: #4B3B2A;
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 1px;
+}
+
+.header .baby-name {
+  color: #C19A6B; 
+  font-weight: bold;
+}
+
+.subtext {
+  margin-top: 0.75rem;
+  font-size: 1.05rem;
+  color: #6B4F3A;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .header {
+    padding: 1.25rem;
   }
-  
+
   .header h1 {
-    font-size: 2rem;
-    color: #004e92;
-    margin: 0;
+    font-size: 1.9rem;
   }
-  
-  .header .baby-name {
-    color: #ffd600;
-  }
-  
+
   .subtext {
-    margin-top: 0.5rem;
-    font-size: 1rem;
-    color: #555;
+    font-size: 0.95rem;
   }
-  
-  /* Responsividade */
-  @media (max-width: 600px) {
-    .header h1 {
-      font-size: 1.5rem;
-    }
-  
-    .subtext {
-      font-size: 0.9rem;
-    }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 1rem;
   }
-  
+
+  .header h1 {
+    font-size: 1.65rem;
+  }
+
+  .subtext {
+    font-size: 0.85rem;
+  }
+}

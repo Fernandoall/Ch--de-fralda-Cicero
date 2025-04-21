@@ -1,84 +1,154 @@
 .client-modal-backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(50, 40, 30, 0.5); // mesmo tom do outro modal
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.client-modal {
+  background: #fdf9f0; // tom claro neutro
+  padding: 2rem;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 12px 28px rgba(60, 45, 25, 0.25);
+  position: relative;
+  animation: slideIn 0.3s ease;
+  font-family: 'Open Sans', sans-serif;
+
+  h2,
+  .tituloh2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #3e2c1c;
+    font-family: 'Playfair Display', serif;
   }
-  
-  .client-modal {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 16px;
-    width: 90%;
-    max-width: 400px;
-    max-height: 90vh;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    gap: 1rem;
+
+  h4 {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+    text-align: justify;
+    color: #6b5642;
   }
-  
-  .close-button {
-    align-self: flex-end;
-    border: none;
-    background: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-  
-  .client-modal input,
-  .client-modal select {
-    padding: 10px;
+
+  input,
+  select {
+    padding: 0.75rem 1rem;
     font-size: 1rem;
     border-radius: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #c7bda4;
     width: 100%;
+    margin-bottom: 1rem;
+    background-color: #fffaf2;
+    color: #3e2c1c;
+
+    &:focus {
+      outline: none;
+      border-color: #b8860b;
+      box-shadow: 0 0 0 2px rgba(184, 134, 11, 0.3);
+    }
   }
-  
+
   .select-entrega {
     appearance: none;
     background-color: #fff;
-    border: 1px solid #ccc;
   }
-  
-  .enviar-btn {
-    padding: 10px;
-    background-color: #facc15;
-    border: none;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .enviar-btn:hover {
-    background-color: #eab308;
-  }
-  
+
   .imagem-produto {
     width: 100%;
     max-height: 120px;
     object-fit: contain;
     border-radius: 8px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd1b7;
   }
-  
-  .tituloh2 {
-    padding: 0;
-    margin: 0 0 0.3rem 0;
-    font-size: 1.3rem;
-    text-align: center;
+
+  .enviar-btn {
+    padding: 0.8rem 1.4rem;
+    background-color: #f4c542;
+    border: none;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    align-self: center;
+    margin-top: 1rem;
+    color: #3e2c1c;
+
+    &:hover {
+      background-color: #eab308;
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
   }
-  
-  .client-modal h4 {
-    font-size: 0.95rem;
-    margin: 0 0 1rem 0;
-    text-align: justify;
+
+  .close-button {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 1.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #3e2c1c;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Responsivo para celulares
+@media (max-width: 480px) {
+  .client-modal {
+    padding: 1.5rem;
+
+    h2 {
+      font-size: 1.6rem;
+    }
+
+    input,
+    select {
+      font-size: 0.95rem;
+    }
+  }
+}
+
+// Responsivo para tablets
+@media (max-width: 768px) {
+  .client-modal {
+    padding: 1.5rem;
+
+    h2 {
+      font-size: 1.8rem;
+    }
+  }
+}
