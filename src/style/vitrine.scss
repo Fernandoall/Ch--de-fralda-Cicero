@@ -1,0 +1,64 @@
+.carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  
+    .scroll-btn {
+      background-color: #facc15;
+      border: none;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: background-color 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  
+      &:hover {
+        background-color: #fbbf24;
+      }
+  
+      &.left {
+        left: -18px;
+      }
+  
+      &.right {
+        right: -18px;
+      }
+    }
+  }
+  
+  .vitrine-horizontal {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 1rem 0;
+    scrollbar-width: thin;
+  
+    &::-webkit-scrollbar {
+      height: 8px;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background-color: #facc15;
+      border-radius: 4px;
+    }
+  
+    &::-webkit-scrollbar-track {
+      background-color: #f1f1f1;
+    }
+  
+    .card {
+      flex: 0 0 calc(100% / 8 - 1rem); // 8 cards por vez, com gap de 1rem
+      scroll-snap-align: start;
+    }
+  }
+  

@@ -1,0 +1,79 @@
+/* src/components/ClientInfoModal.scss */
+
+.client-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+  }
+  
+  .client-modal {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .client-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  
+    label {
+      font-weight: 600;
+      display: flex;
+      flex-direction: column;
+      font-size: 0.95rem;
+    }
+  
+    input {
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      border: 1px solid #ccc;
+      margin-top: 0.3rem;
+    }
+  }
+  
+  .produto-lista {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  
+    ul {
+      margin-top: 0.5rem;
+      padding-left: 1rem;
+      list-style: disc;
+    }
+  }
+  
+  .modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+  
+    .cancelar-btn {
+      background-color: #ccc;
+      color: #000;
+    }
+  
+    .confirmar-btn {
+      background-color: #ffc107;
+      color: #000;
+    }
+  
+    button {
+      border: none;
+      padding: 0.6rem 1rem;
+      border-radius: 0.5rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+  

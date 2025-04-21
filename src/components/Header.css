@@ -1,0 +1,35 @@
+.header {
+    background-color: #ffffff;
+    padding: 1.5rem 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+    color: #004e92;
+    margin: 0;
+  }
+  
+  .header .baby-name {
+    color: #ffd600;
+  }
+  
+  .subtext {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 600px) {
+    .header h1 {
+      font-size: 1.5rem;
+    }
+  
+    .subtext {
+      font-size: 0.9rem;
+    }
+  }
+  
