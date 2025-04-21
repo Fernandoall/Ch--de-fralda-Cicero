@@ -1,84 +1,94 @@
 // src/components/ClientInfoModal.jsx
 
 import React, { useState } from "react";
-import products from "../data/products";
+import Agradecimento from './Agradecimento';
 import "./ClientInfoModal.scss";
 
-const ClientInfoModal = ({ selectedItems, onConfirm, onCancel }) => {
+const ClientInfoModal = ({ onClose, selectedItems }) => {
   const [nome, setNome] = useState("");
   const [telefone, setTelefone] = useState("");
+  const [formaEntrega, setFormaEntrega] = useState("");
+  const [showAgradecimento, setShowAgradecimento] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (!nome.trim() || !telefone.trim()) {
+  const handleSubmit = () => {
+    if (!nome || !telefone || !formaEntrega) {
       alert("Por favor, preencha todos os campos.");
       return;
     }
 
-    const dadosCliente = {
-      nome,
-      telefone,
-      produtos: Object.entries(selectedItems).map(([id, quantidade]) => {
-        const produto = products.find((p) => p.id.toString() === id);
-        return {
-          nome: produto?.nome || `Produto ID: ${id}`,
-          quantidade,
-        };
-      }),
-    };
+    let mensagem = `Oi, Laura! Aqui é ${nome}, meu telefone é ${telefone}. `;
+    mensagem += `Assinei os seguintes itens da lista do Chá de Fraldas do Antônio Cícero:\n`;
+    mensagem += selectedItems.map((item) => `- ${item.qtd}x ${item.nome}`).join("\n");
 
-    onConfirm(dadosCliente);
+    mensagem += `\n\nFarei o envio dos itens via: ${formaEntrega}.\n`;
+
+    mensagem += `\nInformações úteis:\n\n`;
+
+    mensagem += `Caso tenha optado por PIX:\nChave Pix: 017.572.834-80\n`;
+
+    mensagem += `\nCaso tenha optado por Presencial no dia do Chá.\nInformações do evento:\nData: 17 de maio, às 15h.\nLocal: Boteco Seu Tijuca.\nEndereço: Av. Washington Luís, 386 - Gonzaga, Santos - SP\n\n`;
+
+    mensagem += `Caso tenha optado por Envio no nosso endereço:\nEndereço para entrega: Av. Martins Fontes, 506, Apto 12 - Catiapoã, São Vicente - SP - CEP: 11390-200\n`;
+
+    mensagem += `\nCom carinho,\n${nome}`;
+
+    const whatsappLink = `https://wa.me/5584998140986?text=${encodeURIComponent(mensagem)}`;
+    window.open(whatsappLink, "_blank");
+
+    setShowAgradecimento(true);
+
+    setTimeout(() => {
+      onClose(); // Fecha o modal após 2 segundos
+    }, 2000);
   };
 
   return (
     <div className="client-modal-backdrop">
       <div className="client-modal">
-        <h2>Finalizar Pedido</h2>
-        <form onSubmit={handleSubmit} className="client-form">
-          <label>
-            Nome:
+        <button className="close-button" onClick={onClose}>✕</button>
+        {showAgradecimento ? (
+          <Agradecimento />
+        ) : (
+          <>
+            <h2 className="tituloh2">Está quase lá! 🤩</h2>
+            <h4><strong>Atenção!</strong> Ao indicar seu nome, telefone e a forma de envio abaixo, você será encaminhado(a) para o whatsapp da Laura, onde aparecerá a lista de itens assinada. Faça o envio da mensagem para que seja contabilizado na lista geral.</h4>
             <input
               type="text"
+              placeholder="Seu nome"
               value={nome}
               onChange={(e) => setNome(e.target.value)}
-              required
             />
-          </label>
-
-          <label>
-            Telefone:
             <input
               type="tel"
+              placeholder="Seu telefone"
               value={telefone}
               onChange={(e) => setTelefone(e.target.value)}
-              required
             />
-          </label>
-
-          <div className="produto-lista">
-            <strong>Produtos Selecionados:</strong>
-            <ul>
-              {Object.entries(selectedItems).map(([id, quantidade]) => {
-                const produto = products.find((p) => p.id.toString() === id);
-                return (
-                  <li key={id}>
-                    {produto?.nome || `Produto ID: ${id}`} — {quantidade}x
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-
-          <div className="modal-buttons">
-            <button type="button" className="cancelar-btn" onClick={onCancel}>
-              Cancelar
-            </button>
-            <button type="submit" className="confirmar-btn">
-              Confirmar Pedido
-            </button>
-          </div>
-        </form>
+            <select
+              value={formaEntrega}
+              onChange={(e) => setFormaEntrega(e.target.value)}
+              className="select-entrega"
+            >
+              <option value="">Selecione a forma de envio</option>
+              <option value="1- Pix">1- Pix </option>
+              <option value="2- Presencial no dia do Chá">2- Presencial no dia do Chá</option>
+              <option value="3- Envio no seu endereço">3- Envio no seu endereço</option>
+            </select>
+            <div className="produtos-selecionados">
+              <h3>Itens selecionados</h3>
+              {selectedItems.map((produto, index) => (
+                <div key={index} className="produto">
+                  {produto.imagem && produto.imagem !== "#" && (
+                    <img src={produto.imagem} alt={produto.nome} className="imagem-produto" />
+                  )}
+                  <p>{produto.nome}</p>
+                  <p>Quantidade: {produto.qtd}</p>
+                </div>
+              ))}
+            </div>
+            <button className="enviar-btn" onClick={handleSubmit}>Assinar e enviar no whatsapp</button>
+          </>
+        )}
       </div>
     </div>
   );

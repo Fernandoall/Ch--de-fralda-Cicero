@@ -17,6 +17,10 @@
     border-radius: 16px;
     width: 90%;
     max-width: 480px;
+    max-height: 90vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     position: relative;
     animation: slideIn 0.3s ease;
@@ -31,6 +35,10 @@
       list-style: none;
       padding: 0;
       margin-top: 1.5rem;
+      overflow-y: auto;
+        max-height: 40vh; // ajustável conforme seu layout
+    padding-right: 8px;
+    margin-bottom: 1rem;
   
       .cart-item {
         display: flex;

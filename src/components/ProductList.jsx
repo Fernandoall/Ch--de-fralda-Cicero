@@ -4,12 +4,14 @@ import React, { useState, useRef } from "react";
 import products from "../data/products";
 import FloatingCartButton from "./FloatingCartButton";
 import CartModal from "./CartModal";
+import ClientInfoModal from "./ClientInfoModal"; // <-- Novo import
 import "../style/vitrine.scss";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const ProductList = () => {
   const [selectedItems, setSelectedItems] = useState({});
-  const [cartOpen, setCartOpen] = useState(false); 
+  const [cartOpen, setCartOpen] = useState(false);
+  const [showClientModal, setShowClientModal] = useState(false); // <-- Novo estado
   const carrosselRefs = useRef({});
 
   const categorias = [...new Set(products.map((p) => p.categoria))];
@@ -117,6 +119,21 @@ const ProductList = () => {
           selectedItems={selectedItems}
           setSelectedItems={setSelectedItems}
           onClose={() => setCartOpen(false)}
+          onFinish={() => {
+            setCartOpen(false);
+            setShowClientModal(true); // <-- Abre o modal de cliente
+          }}
+        />
+      )}
+
+      {/* Modal de informações do cliente */}
+      {showClientModal && (
+        <ClientInfoModal
+          selectedItems={Object.entries(selectedItems).map(([id, qtd]) => {
+            const product = products.find((p) => p.id === Number(id));
+            return { id, nome: product?.nome || `Produto ID ${id}`, qtd };
+          })}
+          onClose={() => setShowClientModal(false)}
         />
       )}
     </>

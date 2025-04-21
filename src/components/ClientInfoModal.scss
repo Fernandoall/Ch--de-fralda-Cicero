@@ -1,79 +1,84 @@
-/* src/components/ClientInfoModal.scss */
-
 .client-modal-backdrop {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
-    align-items: center;
     justify-content: center;
-    z-index: 1001;
+    align-items: center;
+    z-index: 9999;
   }
   
   .client-modal {
-    background: #fff;
-    border-radius: 1rem;
+    background-color: #fff;
     padding: 2rem;
+    border-radius: 16px;
     width: 90%;
     max-width: 400px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-  }
-  
-  .client-form {
+    max-height: 90vh;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     gap: 1rem;
-  
-    label {
-      font-weight: 600;
-      display: flex;
-      flex-direction: column;
-      font-size: 0.95rem;
-    }
-  
-    input {
-      padding: 0.5rem;
-      border-radius: 0.5rem;
-      border: 1px solid #ccc;
-      margin-top: 0.3rem;
-    }
   }
   
-  .produto-lista {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-  
-    ul {
-      margin-top: 0.5rem;
-      padding-left: 1rem;
-      list-style: disc;
-    }
+  .close-button {
+    align-self: flex-end;
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+    cursor: pointer;
   }
   
-  .modal-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1.5rem;
+  .client-modal input,
+  .client-modal select {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+  }
   
-    .cancelar-btn {
-      background-color: #ccc;
-      color: #000;
-    }
+  .select-entrega {
+    appearance: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+  }
   
-    .confirmar-btn {
-      background-color: #ffc107;
-      color: #000;
-    }
+  .enviar-btn {
+    padding: 10px;
+    background-color: #facc15;
+    border: none;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
   
-    button {
-      border: none;
-      padding: 0.6rem 1rem;
-      border-radius: 0.5rem;
-      font-weight: bold;
-      cursor: pointer;
-    }
+  .enviar-btn:hover {
+    background-color: #eab308;
+  }
+  
+  .imagem-produto {
+    width: 100%;
+    max-height: 120px;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+  
+  .tituloh2 {
+    padding: 0;
+    margin: 0 0 0.3rem 0;
+    font-size: 1.3rem;
+    text-align: center;
+  }
+  
+  .client-modal h4 {
+    font-size: 0.95rem;
+    margin: 0 0 1rem 0;
+    text-align: justify;
   }
   
