@@ -6,7 +6,7 @@ const products = [
     nome: "Body manga longa RN",
     imagem: "https://static.riachuelo.com.br/RCHLO/14820986001/portrait/1725162e9baee8bbda10b15dca27aeee177a4ef3.jpg",
     descricao: "Body macio com mangas longas, ideal para recém-nascidos",
-    quantidadeMaxima: 3,
+    quantidadeMaxima: 10,
     categoria: "Roupinhas para manter o estilo",
   },
   {
@@ -14,7 +14,7 @@ const products = [
     nome: "Body manga longa",
     imagem: "https://static.riachuelo.com.br/RCHLO/14540258005/square/bd9ff33cdde0ed46662639221de9f68f551827af.jpg?imwidth=480",
     descricao: "Body confortável para bebês de 0 a 3 meses, com proteção nos bracinhos.",
-    quantidadeMaxima: 3,
+    quantidadeMaxima: 10,
     categoria: "Roupinhas para manter o estilo",
   },
   {
@@ -22,7 +22,7 @@ const products = [
     nome: "Casaquinho",
     imagem: "https://static.riachuelo.com.br/RCHLO/15815404001/portrait/4cd5c0539e7ec82ea6c903b53d144ebcc3fcbc38.jpg",
     descricao: "Casaquinho leve e quentinho para bebês de até 3 meses.",
-    quantidadeMaxima: 3,
+    quantidadeMaxima: 10,
     categoria: "Roupinhas para manter o estilo",
   },
   {
@@ -30,7 +30,7 @@ const products = [
     nome: "Macacão",
     imagem: "https://static.riachuelo.com.br/RCHLO/14734494001/square/bb1873ba47623fbb46ff01f1e456b9ecdccd301b.jpg?imwidth=480",
     descricao: "Peça única e prática para vestir o bebê com conforto total.",
-    quantidadeMaxima: 3,
+    quantidadeMaxima: 10,
     categoria: "Roupinhas para manter o estilo",
   },
   {
@@ -38,7 +38,7 @@ const products = [
     nome: "Calça RN",
     imagem: "https://static.riachuelo.com.br/RCHLO/14222418001/square/6f0aebf1d17d7d3611d455e0bc3ef15309f33bc0.jpg",
     descricao: "Calça suave para recém-nascidos, com cintura confortável.",
-    quantidadeMaxima: 3,
+    quantidadeMaxima: 10,
     categoria: "Roupinhas para manter o estilo",
   },
   {
@@ -46,7 +46,7 @@ const products = [
     nome: "Calça",
     imagem: "https://static.riachuelo.com.br/RCHLO/14222434001/square/2983f9d565fc1c12dd7f7e50cba3d11059c74662.jpg",
     descricao: "Calça ajustável e macia para bebês de 0 a 3 meses",
-    quantidadeMaxima: 3,
+    quantidadeMaxima: 10,
     categoria: "Roupinhas para manter o estilo",
   },
   {
@@ -54,7 +54,7 @@ const products = [
     nome: "Luvas",
     imagem: "https://static.riachuelo.com.br/RCHLO/15100243001/portrait/5585c341973ed45a2595ada609ea02c86d1edd38.jpg",
     descricao: "Luvas delicadas que protegem as mãozinhas dos recém-nascidos.",
-    quantidadeMaxima: 3,
+    quantidadeMaxima: 10,
     categoria: "Roupinhas para manter o estilo",
   },
   {
@@ -62,7 +62,7 @@ const products = [
     nome: "Luvas 0-3",
     imagem: "https://static.riachuelo.com.br/RCHLO/15103137001/portrait/6cf19bf3b6ef7c83036bdccf6e2e8e765438c716.jpg",
     descricao: "Luvas confortáveis para bebês de até 3 meses, evitando arranhões.",
-    quantidadeMaxima: 3,
+    quantidadeMaxima: 10,
     categoria: "Roupinhas para manter o estilo",
   },
   {
@@ -94,7 +94,7 @@ const products = [
     nome: "Fraldas Enxuta Ecológica Reutilizável e Ajustável ",
     imagem: "https://cdn.awsli.com.br/600x450/842/842702/produto/230350611/fralda-ecologica-estampa-planetas-imagem-1-33q5vu70rb.jpg",
     descricao: "Fralda ecológica com ajuste de tamanho, reutilizável e sustentável.",
-    quantidadeMaxima: 3,
+    quantidadeMaxima: 30,
     categoria: "Fraldas descartáveis e ecológicas",
   },  
   {
@@ -102,7 +102,7 @@ const products = [
     nome: "Fraldas descartáveis RN",
     imagem: "https://m.media-amazon.com/images/I/61Obkq-J7EL.jpg",
     descricao: "Fralda confortável e segura para recém-nascidos (até 4 kg)",
-    quantidadeMaxima: 200,
+    quantidadeMaxima: 300,
     categoria: "Fraldas descartáveis e ecológicas",
   },
   {
@@ -118,7 +118,7 @@ const products = [
     nome: "Fraldas descartáveis M",
     imagem: "https://m.media-amazon.com/images/I/81lq-otoZ9L.jpg",
     descricao: "Fralda ideal para bebês médios, de 5,5 a 9,5 kg",
-    quantidadeMaxima: 3,
+    quantidadeMaxima: 300,
     categoria: "Fraldas descartáveis e ecológicas",
   },
   {
@@ -126,7 +126,7 @@ const products = [
     nome: "Fraldas descartáveis G",
     imagem: "https://m.media-amazon.com/images/I/81lq-otoZ9L.jpg",
     descricao: "Fralda resistente e confortável para bebês maiores, de 9 a 12,5 kg",
-    quantidadeMaxima: 3,
+    quantidadeMaxima: 300,
     categoria: "Fraldas descartáveis e ecológicas",
   },
   {
@@ -134,7 +134,7 @@ const products = [
     nome: "Sabonete liquído neutro cabeça aos pés",
     imagem: "https://m.media-amazon.com/images/I/61Z6flXKdyS.jpg",
     descricao: "Sabonete suave e neutro, ideal para o banho completo do bebê.",
-    quantidadeMaxima: 3,
+    quantidadeMaxima: 10,
     categoria: "Itens para o banho do Pimpolho",
   },
   {
@@ -142,7 +142,7 @@ const products = [
     nome: "Shampoo baby",
     imagem: "https://m.media-amazon.com/images/I/61hHlwOWwIL._AC_SL1001_.jpg",
     descricao: "Shampoo delicado que limpa sem arder os olhos do bebê.",
-    quantidadeMaxima: 3,
+    quantidadeMaxima: 10,
     categoria: "Itens para o banho do Pimpolho",
   },
   {
@@ -150,7 +150,7 @@ const products = [
     nome: "Hidratante Corporal",
     imagem: "https://m.media-amazon.com/images/I/61rSEfUzIPS._AC_UF350,350_QL80_.jpg",
     descricao: "Hidrata e protege a pele sensível do bebê com toque macio.",
-    quantidadeMaxima: 3,
+    quantidadeMaxima: 10,
     categoria: "Itens para o banho do Pimpolho",
   },
   {
@@ -158,7 +158,7 @@ const products = [
     nome: "Óleo corporal baby",
     imagem: "https://m.media-amazon.com/images/I/41VdPm+7t5L.jpg",
     descricao: "Óleo leve que nutre e suaviza a pele do bebê.",
-    quantidadeMaxima: 3,
+    quantidadeMaxima: 10,
     categoria: "Itens para o banho do Pimpolho",
   },
   {
@@ -166,7 +166,7 @@ const products = [
     nome: "Pacote algodão em disco",
     imagem: "https://m.media-amazon.com/images/I/51SR3qDOEtL._AC_SX679_.jpg",
     descricao: "Discos de algodão macios, ideais para a higiene diária do bebê.",
-    quantidadeMaxima: 3,
+    quantidadeMaxima: 10,
     categoria: "Itens para o banho do Pimpolho",
   },
   {
@@ -174,7 +174,7 @@ const products = [
     nome: "Colônia baby",
     imagem: "https://m.media-amazon.com/images/I/513mjGdl+TL.jpg",
     descricao: "Fragrância suave e segura, perfeita para deixar o bebê sempre cheiroso.",
-    quantidadeMaxima: 3,
+    quantidadeMaxima: 10,
     categoria: "Itens para o banho do Pimpolho",
   },
   {
@@ -182,7 +182,7 @@ const products = [
     nome: "Lenço umidecido biodegradável",
     imagem: "https://m.media-amazon.com/images/I/51T5X88IPcL._AC_UF1000,1000_QL80_.jpg",
     descricao: "Lenços suaves e ecológicos para a limpeza delicada do bebê.",
-    quantidadeMaxima: 3,
+    quantidadeMaxima: 10,
     categoria: "Itens para o banho do Pimpolho",
   },
   {
@@ -190,7 +190,7 @@ const products = [
     nome: "Algodão quadrado cremmer biodegradável",
     imagem: "https://m.media-amazon.com/images/I/61L7wihxXXL._AC_SX679_.jpg",
     descricao: "Escova para higienização de mamadeiras",
-    quantidadeMaxima: 3,
+    quantidadeMaxima: 10,
     categoria: "Itens para o banho do Pimpolho",
   },
   {
@@ -198,7 +198,7 @@ const products = [
     nome: "Lixeira antiodor",
     imagem: "https://http2.mlstatic.com/D_NQ_NP_657601-MLU76144911874_052024-O.webp",
     descricao: "Lixeira especial que bloqueia odores e mantém o ambiente mais agradável.",
-    quantidadeMaxima: 3,
+    quantidadeMaxima: 10,
     categoria: "Itens diversos",
   },
   {
@@ -206,7 +206,7 @@ const products = [
     nome: "Ninho redutor",
     imagem: "https://cdn.awsli.com.br/2500x2500/2731/2731494/produto/266799269/ninho-redutor-pompom--18--5ul5zmc87s.jpg",
     descricao: "Acolchoado que envolve o bebê com conforto e segurança no berço ou cama.",
-    quantidadeMaxima: 3,
+    quantidadeMaxima: 10,
     categoria: "Itens diversos",
   },
   {
@@ -214,7 +214,7 @@ const products = [
     nome: "Umidifador de ar",
     imagem: "https://m.media-amazon.com/images/I/71qxovjypyL._AC_SX679_.jpg",
     descricao: "Ajuda a manter o ar úmido e mais saudável para o bebê respirar.",
-    quantidadeMaxima: 3,
+    quantidadeMaxima: 10,
     categoria: "Itens diversos",
   },
   {
@@ -222,7 +222,7 @@ const products = [
     nome: "Chupeta",
     imagem: "https://bubababy.com.br/wp-content/uploads/2022/01/12659-1-1.jpg",
     descricao: "Acalma e conforta o bebê em momentos de descanso ou sono.",
-    quantidadeMaxima: 3,
+    quantidadeMaxima: 10,
     categoria: "Itens diversos",
   },
   {
@@ -230,7 +230,7 @@ const products = [
     nome: "Cadeira de descanso/balanço bebê (Swing chair)",
     imagem: "https://m.media-amazon.com/images/I/61wCaV2FzaL.jpg",
     descricao: "Assento macio com leve balanço para momentos relaxantes.",
-    quantidadeMaxima: 3,
+    quantidadeMaxima: 10,
     categoria: "Itens diversos",
   },
   {
@@ -238,7 +238,7 @@ const products = [
     nome: "Tapetinho para Tummy Time",
     imagem: "https://m.media-amazon.com/images/I/6126Dp7RdpL._AC_UF894,1000_QL80_.jpg",
     descricao: "Tapete acolchoado e seguro para o bebê brincar no chão.",
-    quantidadeMaxima: 3,
+    quantidadeMaxima: 10,
     categoria: "Itens diversos",
   },
   {
@@ -246,7 +246,7 @@ const products = [
     nome: "Ruído branco (White Noise)",
     imagem: "https://m.media-amazon.com/images/I/51IUji0Sl8L._AC_UF894,1000_QL80_.jpg",
     descricao: "Dispositivo que emite som suave para acalmar o bebê e melhorar o sono.",
-    quantidadeMaxima: 3,
+    quantidadeMaxima: 10,
     categoria: "Itens diversos",
   },
   {
@@ -254,7 +254,7 @@ const products = [
     nome: "Brinquedos de 0-3 meses",
     imagem: "https://images.tcdn.com.br/img/editor/up/601507/kit_montessori_madeiramin.png",
     descricao: "Pequenos itens lúdicos e seguros para estimular e entreter o bebê.",
-    quantidadeMaxima: 3,
+    quantidadeMaxima: 10,
     categoria: "Itens diversos",
   },
   {
@@ -262,7 +262,7 @@ const products = [
     nome: "Cueiro",
     imagem: "https://m.media-amazon.com/images/I/713eOlGNFrL._AC_UF894,1000_QL80_.jpg",
     descricao: "Tecido leve usado para enrolar e aconchegar o bebê com conforto.",
-    quantidadeMaxima: 3,
+    quantidadeMaxima: 10,
     categoria: "Banho e sono",
   },
   {
@@ -270,7 +270,7 @@ const products = [
     nome: "Fralda de pano comum",
     imagem: "https://cdn.awsli.com.br/800x800/2540/2540198/produto/215715465/fralda_pano_estampadas_luxo-fdchhy0qlx.png",
     descricao: "Fralda tradicional de tecido, versátil e reutilizável para o dia a dia.",
-    quantidadeMaxima: 3,
+    quantidadeMaxima: 10,
     categoria: "Banho e sono",
   },
   {
@@ -278,7 +278,7 @@ const products = [
     nome: "Cobertor manta simples",
     imagem: "https://static.riachuelo.com.br/RCHLO/14222710001/square/b447b90ec6d1cdcce7a520731de8cc98f81c4b22.jpg?imwidth=480",
     descricao: "Manta leve e macia, ideal para dias mais amenos.",
-    quantidadeMaxima: 3,
+    quantidadeMaxima: 10,
     categoria: "Banho e sono",
   },
   {
@@ -286,7 +286,7 @@ const products = [
     nome: "Cobertor manta grossa",
     imagem: "https://m.media-amazon.com/images/I/61xmRKmlATL._AC_UF894,1000_QL80_.jpg",
     descricao: "Manta mais encorpada, perfeita para manter o bebê quentinho no frio.",
-    quantidadeMaxima: 3,
+    quantidadeMaxima: 10,
     categoria: "Banho e sono",
   },
   {
@@ -294,7 +294,7 @@ const products = [
     nome: "Toalha com capuz",
     imagem: "https://static.riachuelo.com.br/RCHLO/15609189001/square/854b81be2219dba236dc22bb4f58407b588fe2f8.jpg?imwidth=480",
     descricao: "Toalha felpuda com capuz para secar e proteger o bebê após o banho.",
-    quantidadeMaxima: 3,
+    quantidadeMaxima: 10,
     categoria: "Banho e sono",
   },
 ];
