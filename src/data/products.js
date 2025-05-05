@@ -155,7 +155,7 @@ const products = [
   },
   {
     id: 10,
-    nome: "Touca (Somente se região fria)",
+    nome: "Touca RN",
     imagem: "https://static.riachuelo.com.br/RCHLO/14537133001/square/da7dcce7ae20f120913ad5c91da8a35c38622146.jpg?imwidth=480",
     descricao: "Touca quentinha para manter a cabecinha do recém-nascido aquecida.",
     quantidadeMaxima: 6,
@@ -163,7 +163,7 @@ const products = [
   },
   {
     id: 11,
-    nome: "Touca (Somente se região fria)",
+    nome: "Touca",
     imagem: "https://static.riachuelo.com.br/RCHLO/14687330001/square/de2a3a1bb2fd4d9381c87c395a9ee61462811629.jpg?imwidth=480",
     descricao: "Touca macia para proteger do frio bebês de até 3 meses.",
     quantidadeMaxima: 6,
@@ -229,7 +229,7 @@ const products = [
     id: 25,
     nome: "Algodão quadrado cremmer biodegradável",
     imagem: "https://m.media-amazon.com/images/I/61L7wihxXXL._AC_SX679_.jpg",
-    descricao: "Escova para higienização de mamadeiras",
+    descricao: "Cuidados delicados com um toque de consciência.",
     quantidadeMaxima: 10,
     categoria: "Higiene do Pimpolho",
   },
