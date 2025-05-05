@@ -1,52 +1,97 @@
 .header {
-  background-color: #EFEAD8;
-  padding: 2rem 1.5rem;
-  border-radius: 18px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem 1.5rem;
   margin-bottom: 2rem;
   text-align: center;
+  border-radius: 20px;
   border: 1px solid #D6C9A3;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   font-family: 'Open Sans', sans-serif;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #FFF8E1, #EFEAD8);
+  animation: slideFade 1s ease-out forwards;
+}
+
+.header-safari {
+  background: linear-gradient(135deg, #fdf6e3, #fcebd5);
 }
 
 .header h1 {
-  font-size: 2.2rem;
-  color: #4B3B2A;
-  margin: 0;
+  font-size: 2.5rem;
+  color: #3E2F20;
   font-family: 'Playfair Display', serif;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
 }
 
 .header .baby-name {
-  color: #C19A6B; 
+  color: #D4A64E;
   font-weight: bold;
 }
 
 .subtext {
-  margin-top: 0.75rem;
-  font-size: 1.05rem;
-  color: #6B4F3A;
-  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1rem;
+  color: #5C4433;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-/* Responsividade */
+/* ✨ Elementos decorativos */
+.header-decor {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  opacity: 0.9;
+}
+
+/* 🌿 Transições suaves */
+.fade-in {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.delay {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Responsividade */
 @media (max-width: 768px) {
   .header {
-    padding: 1.25rem;
+    padding: 1.8rem 1rem;
   }
 
   .header h1 {
-    font-size: 1.9rem;
+    font-size: 2rem;
   }
 
   .subtext {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 480px) {
   .header {
-    padding: 1rem;
+    padding: 1.25rem;
   }
 
   .header h1 {
@@ -54,6 +99,12 @@
   }
 
   .subtext {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
+  }
+
+  .header-decor {
+    top: 0.75rem;
+    right: 0.75rem;
+    font-size: 1.6rem;
   }
 }

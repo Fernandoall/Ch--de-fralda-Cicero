@@ -1,11 +1,9 @@
-/* src/App.css */
-
 body {
   margin: 0;
   padding: 0;
   font-family: 'Quicksand', sans-serif;
-  background-color: #f4f1e1; /* fundo bege claro */
-  color: #3a3a3a; /* texto escuro para contraste */
+  background-color: #f4f1e1;
+  color: #3a3a3a;
 }
 
 .App {
@@ -22,7 +20,7 @@ body {
 }
 
 .card {
-  background: #fff8e1; /* fundo bege mais suave */
+  background: #fff8e1;
   border-radius: 8px;
   padding: 1rem;
   width: 220px;
@@ -43,17 +41,17 @@ body {
 
 .card h3 {
   margin: 0.5rem 0;
-  color: #4e4b3e; /* cor do título mais escura */
-  font-family: 'Playfair Display', serif; /* fonte serifada para um toque mais elegante */
+  color: #4e4b3e;
+  font-family: 'Playfair Display', serif;
 }
 
 .card p {
   font-size: 0.9rem;
-  color: #6b5d2d; /* cor de texto mais amarelada para dar o tom de natureza */
+  color: #6b5d2d;
 }
 
 button {
-  background-color: #f0c674; /* amarelo queimado */
+  background-color: #f0c674;
   border: none;
   padding: 0.6rem 1.2rem;
   margin-top: 0.5rem;
@@ -66,11 +64,26 @@ button {
 }
 
 button:hover {
-  background-color: #d49e34; /* tom mais escuro ao passar o mouse */
+  background-color: #d49e34;
 }
 
 button:active {
-  transform: scale(0.98); /* efeito de clique */
+  transform: scale(0.98);
+}
+
+/* Footer personalizado */
+.footer {
+  margin-top: 3rem;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  color: #777;
+  background-color: transparent;
+  text-align: center;
+}
+
+.footer .destaque {
+  color: #d49e34;
+  font-weight: bold;
 }
 
 /* Responsividade */
